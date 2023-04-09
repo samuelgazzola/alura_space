@@ -15,6 +15,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import pymysql
+pymysql.version_info = (1, 4, 3, "final", 0)
+pymysql.install_as_MySQLdb()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,8 +83,12 @@ WSGI_APPLICATION = "setup.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": str(os.getenv("ENGINE")),
+        "NAME": str(os.getenv("NAME")),
+        "USER": str(os.getenv("USER")),
+        "PASSWORD": str(os.getenv("PASSWORD")),
+        "HOST": str(os.getenv("HOST")),
+        "PORT": str(os.getenv("PORT")),
     }
 }
 
