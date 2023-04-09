@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "fs-adm.cy8kxvt7kct2.us-east-2.rds.amazonaws.com",
+            "port": 3306,
+            "driver": "MariaDB",
+            "database": "fs_adm",
+            "username": "stg",
+            "name": "FS_ADM"
+        }
+    ]
+}
